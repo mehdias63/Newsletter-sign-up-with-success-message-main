@@ -30,15 +30,15 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col md:flex-row gap-3 justify-center items-center md:grid md:grid-cols-2 ">
       {!success ? (
         <>
-        <picture>
+        <picture className="md:col-start-2">
         <source media="(min-width: 640px)" srcSet='/images/illustration-sign-up-desktop.svg' type="image/png"/>
         <source media="(max-width: 639px)" srcSet='/images/illustration-sign-up-mobile.svg' type="image/png"/>
         <img src='/images/illustration-sign-up-mobile.svg' alt='illustration'/>
       </picture>
-      <div>
+      <div className="md:col-start-1 md:row-start-1">
         <h1>Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
       <List text="Product discovery and building what matters"/>
