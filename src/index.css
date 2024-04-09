@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .gradient1 {
+      @apply  hover:bg-gradient-to-b hover:from-orange hover:to-pink ;
+    }
+}

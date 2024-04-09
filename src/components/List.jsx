@@ -4,7 +4,7 @@ export default function List({text}) {
   return (
     <div className='flex gap-4'>
         <img src='/images/icon-list.svg'/>
-        <p>{text}</p>
+        <p className="text-base leading-normal">{text}</p>
     </div>
   )
 }

@@ -3,14 +3,17 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      fraun: ["Fraunces"],
-      man: ["Manrope"],
+      robo: ["Roboto"],
+      
     },
     extend: {
       colors: {
-        "dark-blue": "#242742",
-        "light-green": "#44FFA1",
-        "dark-gray": "#584D62",
+        "dark-blue": "#36384D",
+        "light-red": "#FF6155",
+        "dark-gray": "#242742",
+        "orange": "#FF6A3A",
+        "pink": "#FF527B",
+        "light-pink": "#ffe7e6",
       },
     },
   },

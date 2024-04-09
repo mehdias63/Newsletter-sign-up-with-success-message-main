@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import List from './components/List'
+import Button from "./components/Button";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       setError("Email is required");
       setSuccess("");
     } else if (!isValidEmail(email)) {
-      setError("Oops! Please check your email");
+      setError("Valid email required");
       setSuccess("");
     } else {
       setError("");
@@ -30,7 +31,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-3 justify-center items-center md:grid md:grid-cols-2 ">
+    <div className="bg-white flex flex-col md:flex-row gap-3 justify-center items-center md:grid  font-robo text-dark-gray p-6 rounded-2xl min-h-screen">
       {!success ? (
         <>
         <picture className="md:col-start-2">
@@ -39,41 +40,38 @@ function App() {
         <img src='/images/illustration-sign-up-mobile.svg' alt='illustration'/>
       </picture>
       <div className="md:col-start-1 md:row-start-1">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <h1 className="text-[2.5rem] lg:text-[3.5rem] font-bold leading-10 lg:leading-[3.5rem]">Stay updated!</h1>
+        <p className="text-base leading-normal lg:my-2">Join 60,000+ product managers receiving monthly updates on:</p>
       <List text="Product discovery and building what matters"/>
       <List text="Measuring to ensure updates are a success"/>
       <List text="And much more!"/>
       <form onSubmit={handleSubmit} className="w-full mt-6">
       <div className="sm:w-[22rem] md:w-[25rem] lg:w-[27rem] flex flex-col mb-4 md:mb-6 relative">
-        <label>Email address</label>
+        <label className="text-xs font-bold leading-[1.125rem]">Email address</label>
+        {error && <div className="absolute text-xs text-light-red right-0">{error}</div>}
         <input
           type="email"
           value={email}
           onChange={handleInputChange}
           placeholder="email@company.com"
-          className="w-full border-2 placeholder:text-dark-gray placeholder:opacity-50 px-6 py-3 bg-white"
+          className={`w-full border-2 placeholder:text-dark-gray placeholder:opacity-50 px-6 py-3 ${error ? "border-light-red text-light-red bg-light-pink" : "bg-white border-dark-gray"}`}
         />
-        <button className=" px-7 py-3 sm:px-10 cursor-pointer bg-dark-blue text-white mt-5">
-        Subscribe to monthly newsletter
-        </button>
+       <Button text="Subscribe to monthly newsletter"/>
       </div>
       </form>
       </div>
         </>
       ) : (
         <>
-        <div className="">
+        <div className="w-[31.5rem] px-6 lg:px-16 lg:py-12">
           <img src='/images/icon-success.svg'/>
-          <h2>Thanks for subscribing!</h2>
+          <h2 className="text-[2.5rem] lg:text-[3.5rem] font-bold leading-10 lg:leading-[3.5rem] my-6">Thanks for subscribing!</h2>
           <p>A confirmation email has been sent to <span>ash@loremcompany.com.</span> Please open it and click the button inside to confirm your subscription</p>
-          <button className=" px-7 py-3 sm:px-10 cursor-pointer bg-dark-blue text-white mt-5">
-          Dismiss message
-        </button>
+          <Button text="Dismiss message" className="mt-[10rem] md:mt-[4rem]"/>
         </div>
         </>
       )}
-      {error && <div className="text-xs text-red">{error}</div>}
+      
     </div>
   )
 }
