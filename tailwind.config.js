@@ -14,6 +14,7 @@ export default {
         "orange": "#FF6A3A",
         "pink": "#FF527B",
         "light-pink": "#ffe7e6",
+        "light-gray": "#19182B40",
       },
     },
   },
