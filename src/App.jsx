@@ -39,7 +39,7 @@ function App() {
     <div className="flex flex-col md:flex-row gap-3 justify-center items-center font-robo text-dark-gray p-6 rounded-2xl">
       {!success ? (
         <>
-        <div className="md:w-[48rem] lg:w-[58rem] bg-white rounded-2xl flex flex-col md:flex-row gap-3 justify-center items-center md:grid md:grid-cols-2 p-4 lg:p-6">
+        <div className="md:w-[48rem] lg:w-[58rem] bg-white rounded-[2.25rem] flex flex-col md:flex-row gap-3 justify-center items-center md:grid md:grid-cols-2 p-4 lg:p-6">
         <picture className="md:col-start-2 md:ml-10 lg:ml-12">
         <source media="(min-width: 640px)" srcSet='/images/illustration-sign-up-desktop.svg' type="image/png"/>
         <source media="(max-width: 639px)" srcSet='/images/illustration-sign-up-mobile.svg' type="image/png"/>
@@ -70,7 +70,7 @@ function App() {
         </>
       ) : (
         <>
-        <div className="sm:w-[31.5rem] bg-white rounded-2xl">
+        <div className="sm:w-[31.5rem] bg-white rounded-[2.25rem]">
         <div className="p-6 lg:px-16 lg:py-12 flex flex-col justify-start items-start">
           <img src='/images/icon-success.svg' className="mb-4" alt="icon-success"/>
           <h2 className="text-[2.5rem] lg:text-[3.5rem] font-bold leading-10 lg:leading-[3.5rem] my-6">Thanks for subscribing!</h2>
